@@ -1,5 +1,6 @@
 import { ChevronRight, HelpCircle, User, Home } from "lucide-react";
-import diwanLogo from 'figma:asset/2bbdf2da9cb0968580cb29dd9bf8aa7b090ce483.png';
+import imagelinksLogo from "../logos/imagelinks.png";
+import diwanLogo from "../logos/diwan.png";
 import { Button } from "./ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "./ui/breadcrumb";
 
@@ -154,12 +155,7 @@ export function Header({ currentView, selectedDepartment, selectedSubDepartment,
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="flex items-center cursor-pointer" onClick={onNavigateHome}>
-              <div className="w-8 h-8 rounded-sm flex items-center justify-center" style={{ backgroundColor: 'var(--brand-red)' }}>
-                <div className="w-4 h-4 bg-white rounded-sm"></div>
-              </div>
-              <span className="ml-2 text-lg text-gray-900" style={{ fontWeight: 600 }}>
-                IMAGE<span style={{ color: 'var(--brand-red)' }}>LINKS</span>
-              </span>
+              <img src={imagelinksLogo} alt="ImageLinks" className="h-8" />
             </div>
           </div>
 
@@ -175,8 +171,8 @@ export function Header({ currentView, selectedDepartment, selectedSubDepartment,
         <div className="flex items-center space-x-4">
           <img 
             src={diwanLogo} 
-            alt="Diwan Document Management System" 
-            className="h-6"
+            alt="Diwan" 
+            className="h-8 object-contain"
           />
 
         </div>
