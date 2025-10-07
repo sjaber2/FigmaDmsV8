@@ -14,10 +14,11 @@ import { DocumentPreview } from "./components/DocumentPreview";
 import { ActionButtons } from "./components/ActionButtons";
 import { ReviewDocument } from "./components/ReviewDocument";
 import { DocumentInstance } from "./components/DocumentInstance";
+import { ReportsView } from "./components/ReportsView";
 import { Toaster } from "./components/ui/sonner";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
-type ViewType = 'dashboard' | 'inbox' | 'outbox' | 'favorites' | 'trees' | 'recent' | 'notifications' | 'tree-selection' | 'upload-selection' | 'indexing' | 'review' | 'instance';
+type ViewType = 'dashboard' | 'inbox' | 'outbox' | 'favorites' | 'trees' | 'recent' | 'notifications' | 'reports' | 'tree-selection' | 'upload-selection' | 'indexing' | 'review' | 'instance';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
@@ -365,6 +366,26 @@ export default function App() {
             onSave={handleSave}
             documentData={documentData}
           />
+        );
+
+      case 'reports':
+        return (
+          <div className="flex flex-1">
+            <Sidebar 
+              selectedSection={selectedSection}
+              onSectionChange={handleSectionChange}
+              selectedTree={selectedTree}
+              onTreeChange={handleTreeChange}
+              expandedDepartments={expandedDepartments}
+              onDepartmentToggle={handleDepartmentToggle}
+              selectedDepartment={selectedDepartment}
+              onDepartmentSelect={handleDepartmentSelect}
+              selectedSubDepartment={selectedSubDepartment}
+              onSubDepartmentSelect={handleSubDepartmentSelect}
+              onNavigateHome={handleNavigateHome}
+            />
+            <ReportsView />
+          </div>
         );
 
       case 'instance':

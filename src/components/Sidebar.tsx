@@ -73,6 +73,7 @@ export function Sidebar({
     { id: 'inbox', label: 'Inbox', icon: Inbox, count: 5, color: 'default' },
     { id: 'outbox', label: 'Outbox', icon: Send, count: 2, color: 'default' },
     { id: 'trees', label: 'Document Trees', icon: BarChart3, count: null, color: 'default' },
+    { id: 'reports', label: 'Reports', icon: BarChart3, count: null, color: 'default' },
     { id: 'recent', label: 'Recently Viewed', icon: Clock, count: null, color: 'default' },
     { id: 'notifications', label: 'Notifications', icon: User, count: 3, color: 'default' },
     { id: 'favorites', label: 'Favorites', icon: Star, count: null, color: 'default' },
